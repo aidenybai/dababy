@@ -14,6 +14,19 @@ Put this script tag between the `<head>` tags of your webpage.
 <script src="https://unpkg.com/dababy"></script>
 ```
 
+## Dababy Quote Generator Example
+
+```html
+<div data="{ quotes: ['LES GO', 'LESS GO', 'LESSS GO'] }">
+  <button ref="quote" bind="{
+    onclick: () => {
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      refs.quote.innerHTML = quote;
+    }
+  }"><button>
+</div>
+```
+
 ## Features
 
 ### Data
@@ -23,7 +36,9 @@ Add the `data` attribute to an element to get started. The value of the attribut
 **Example:**
 
 ```html
-<div data="{ name: 'Dababy' }"></div>
+<div data="{ name: 'Dababy' }">
+  <!-- content here -->
+</div>
 ```
 
 ### Bind
@@ -40,14 +55,14 @@ Add the `bind` attribute to an element to bind properties, basically anything yo
 
 ### Refs
 
-Markers that act like shorthands for `document.querySelector`. Attach it to an element and name it in the attribute value, then access it later by doing `refs.<name>`
+Add the `ref` attribute to create markers that act like shorthands for `document.querySelector`. Attach it to an element and name it in the attribute value, then access it later by doing `refs.<name>`
 
 **Example:**
 
 ```html
 <div data="{ name: 'Dababy' }">
   <p ref="name">: I am a god</p>
-  <p bind="{ innerHTML: name + refs.name }"><!-- Dababy: I am a god --></p>
+  <p bind="{ innerHTML: name + refs.name.innerHTML }"><!-- Dababy: I am a god --></p>
 </div>
 ```
 
