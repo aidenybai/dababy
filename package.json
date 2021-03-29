@@ -1,0 +1,30 @@
+{
+  "name": "dababy",
+  "version": "0.0.1",
+  "description": "Data binding so simple even DaBaby could do it!",
+  "main": "index.js",
+  "browser": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidenybai/dababy.git"
+  },
+  "keywords": [
+    "dababy",
+    "bind",
+    "dom",
+    "javascript",
+    "library",
+    "web",
+    "ui",
+    "browser"
+  ],
+  "author": "Aiden Bai <aiden.bai05@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidenybai/dababy/issues"
+  },
+  "homepage": "https://github.com/aidenybai/dababy",
+  "engines": {
+    "node": ">=6.4.0"
+  }
+}
