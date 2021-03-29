@@ -26,18 +26,6 @@ Add the `data` attribute to an element to get started. The value of the attribut
 <div data="{ name: 'Dababy' }"></div>
 ```
 
-### Run
-
-Add the `bind` attribute to an element to bind properties, basically anything you can access in JavaScript like `innerHTML`, `onclick`, `style`, `id`, etc. This will attach it to the element
-
-**Example:**
-
-```html
-<div data="{ name: 'Dababy' }">
-  <p bind="{ innerHTML: name }"></p>
-</div>
-```
-
 ### Bind
 
 Add the `bind` attribute to an element to bind properties, basically anything you can access in JavaScript like `innerHTML`, `onclick`, `style`, `id`, etc. This will attach it to the element
