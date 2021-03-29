@@ -1,6 +1,6 @@
 {
   "name": "dababy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Data binding so simple even DaBaby could do it!",
   "main": "index.js",
   "browser": "index.js",
