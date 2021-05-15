@@ -1,0 +1,6 @@
+node_modules/
+test*.html
+src/*.ts
+yarn.lock
+.gitignore
+.github/

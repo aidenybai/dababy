@@ -2,8 +2,12 @@
   "name": "dababy",
   "version": "1.0.0",
   "description": "Data binding so simple even DaBaby could do it!",
-  "main": "index.js",
-  "browser": "index.js",
+  "main": "src/dababy.js",
+  "browser": "src/dababy.js",
+  "scripts": {
+    "build": "tsc",
+    "cleanup": "prettier --write src --parser typescript"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidenybai/dababy.git"
@@ -26,5 +30,8 @@
   "homepage": "https://github.com/aidenybai/dababy",
   "engines": {
     "node": ">=6.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
   }
 }
