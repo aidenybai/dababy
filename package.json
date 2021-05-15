@@ -1,6 +1,6 @@
 {
   "name": "dababy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Data binding so simple even DaBaby could do it!",
   "main": "src/dababy.js",
   "browser": "src/dababy.js",
