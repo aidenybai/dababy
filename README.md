@@ -1,6 +1,6 @@
-<img src="https://media.tenor.co/videos/0c0c1cbee55eca0578c454ea19698bad/mp4" width="100" align="right">
+<img src="https://raw.githubusercontent.com/aidenybai/dababy/main/.github/dababy.jpg" width="100" align="right">
 
-# Dababy LESSS GOOOO
+# Dababy
 
 Data binding so simple even DaBaby could do it!
 
@@ -61,8 +61,8 @@ Add the `ref` attribute to create markers that act like shorthands for `document
 
 ```html
 <div data="{ name: 'Dababy' }">
-  <p ref="name">: I am a god</p>
-  <p bind="{ innerHTML: name + refs.name.innerHTML }"><!-- Dababy: I am a god --></p>
+  <p ref="name">: turned into a convertable</p>
+  <p bind="{ innerHTML: name + refs.name.innerHTML }"><!-- Dababy: turned into a convertable --></p>
 </div>
 ```
 
