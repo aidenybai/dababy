@@ -1,32 +1,49 @@
+type Refs = Record<string, HTMLElement>;
+type Data = Record<string, unknown>;
+
 interface IDababy {
-  refs: Record<string, HTMLElement>;
-  evalExpression(expression: string, data?: Record<string, unknown>): any;
+  refs: Refs;
   init(): void;
 }
 
-const Dababy: IDababy = {
-  refs: {},
-  evalExpression(expression: string, data: Record<string, unknown> = {}): any {
-    return new Function('__data', 'refs', `with(__data) { return ${expression} }`)(data, this.refs);
-  },
-  init() {
+const evalExpression = (
+  expression: string = '{}',
+  data: Data = {},
+  refs: Refs = {}
+): any => {
+  return new Function('__data', 'refs', `with(__data) { return ${expression} }`)(data, refs);
+};
+
+const renderProps = (nodes: NodeListOf<HTMLElement>, data?: Data, refs?: Refs) => {
+  nodes.forEach((node) => {
+    const props = evalExpression(node.getAttribute('bind') ?? undefined, data, refs);
+    Object.entries(props).forEach(([key, value]) => {
+      // @ts-ignore-error: prop may be undefined, but that's okay for our case
+      node[key] = value;
+    });
+  });
+};
+
+class Dababy implements IDababy {
+  public refs: Refs;
+
+  constructor() {
+    this.refs = {}
+  }
+
+  public init() {
     document.querySelectorAll<HTMLElement>('[ref]').forEach((el) => {
-      this.refs[el.getAttribute('ref')!] = el;
+      const name = el.getAttribute('ref');
+      if (name) this.refs[name] = el;
     });
 
     document.querySelectorAll<HTMLElement>('[data]').forEach((el) => {
-      const data = this.evalExpression(el.getAttribute('data')!);
+      const data = evalExpression(el.getAttribute('data') ?? undefined, {});
       const nodes = el.querySelectorAll<HTMLElement>('[bind]');
 
-      nodes.forEach((node) => {
-        const props = this.evalExpression(node.getAttribute('bind')!, data);
-        Object.entries(props).forEach(([key, value]) => {
-          // @ts-ignore-error: prop may be undefined, but that's okay for our case
-          node[key] = value;
-        });
-      });
+      renderProps(nodes, data, this.refs)
     });
-  },
-};
+  }
+}
 
-document.addEventListener('DOMContentLoaded', () => Dababy.init());
+document.addEventListener('DOMContentLoaded', () => new Dababy().init());

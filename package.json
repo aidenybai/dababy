@@ -2,11 +2,11 @@
   "name": "dababy",
   "version": "1.1.0",
   "description": "Data binding so simple even DaBaby could do it!",
-  "main": "dist/dababy.js",
-  "browser": "dist/dababy.js",
+  "main": "dist/dababy.min.js",
+  "browser": "dist/dababy.min.js",
   "scripts": {
-    "dev": "esbuild src/dababy.ts --bundle --minify --watch --outfile=dist/dababy.js",
-    "build": "esbuild src/dababy.ts --bundle --minify --outfile=dist/dababy.js",
+    "dev": "esbuild src/dababy.ts --bundle --global-name=Dababy --watch --outfile=dist/dababy.js",
+    "build": "sh build.sh",
     "cleanup": "prettier --write src --parser typescript"
   },
   "repository": {
