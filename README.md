@@ -4,8 +4,6 @@
 
 Data binding so simple even DaBaby could do it!
 
-> Note: This name was just made off of a whim, not aimed at offending anyone. If you're looking for something a bit more comprehensive, but not to the level of Vue or Angular, check out [Lucia](https://github.com/aidenybai/lucia)
-
 ## Installation
 
 Put this script tag between the `<head>` tags of your webpage.
